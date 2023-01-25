@@ -1,4 +1,6 @@
 ﻿using CoreWCF;
+using CoreWCFService1.Model;
+using CoreWCFService1.SQL;
 using System;
 using System.Runtime.Serialization;
 
@@ -11,6 +13,9 @@ namespace CoreWCFService1
         string GetData(int value);
 
         [OperationContract]
+        void InsertTableA(TableA tableA);
+
+        [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
     }
 
@@ -20,6 +25,11 @@ namespace CoreWCFService1
         {
             var msg = string.Format("You entered: {0}", value);
             return msg;
+        }
+
+        public void InsertTableA(TableA tableA)
+        {
+            SQL_TableA.Transaction1(tableA);
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
