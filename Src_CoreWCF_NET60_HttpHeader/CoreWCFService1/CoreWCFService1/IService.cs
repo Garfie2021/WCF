@@ -1,6 +1,7 @@
 ﻿using CoreWCF;
 using System;
 using System.Runtime.Serialization;
+using System.Text;
 
 namespace CoreWCFService1
 {
@@ -14,10 +15,33 @@ namespace CoreWCFService1
         CompositeType GetDataUsingDataContract(CompositeType composite);
     }
 
-    public class Service : IService
+    public partial class Service : IService
     {
-        public string GetData(int value)
+        public string GetData(int value, [Injected] HttpResponse httpResponse, [Injected] HttpRequest httpRequest)
         {
+            var sb = new StringBuilder();
+            foreach (var header in httpRequest.Headers)
+            {
+                sb.AppendLine($"{header.Key} : {header.Value}");
+            }
+            sb.AppendLine($"Path : {httpRequest.Path}");
+            sb.AppendLine($"Method : {httpRequest.Method}");
+            sb.AppendLine($"Host : {httpRequest.Host}");
+            sb.AppendLine($"Protocol : {httpRequest.Protocol}");
+            sb.AppendLine($"ContentType : {httpRequest.ContentType}");
+            sb.AppendLine($"ContentLength : {httpRequest.ContentLength}");
+            sb.AppendLine($"IsHttps : {httpRequest.IsHttps}");
+            foreach (var query in httpRequest.Query)
+            {
+                sb.AppendLine($"{query.Key} : {query.Value}");
+            }
+            foreach (var cookies in httpRequest.Cookies)
+            {
+                sb.AppendLine($"{cookies.Key} : {cookies.Value}");
+            }
+
+            var str = sb.ToString();
+
             var msg = string.Format("You entered: {0}", value);
             return msg;
         }

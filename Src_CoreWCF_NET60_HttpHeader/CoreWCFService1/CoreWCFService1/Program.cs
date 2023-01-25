@@ -3,6 +3,7 @@
 builder.Services.AddServiceModelServices();
 builder.Services.AddServiceModelMetadata();
 builder.Services.AddSingleton<IServiceBehavior, UseRequestHeadersForMetadataAddressBehavior>();
+builder.Services.AddTransient<Service>();
 
 var app = builder.Build();
 
