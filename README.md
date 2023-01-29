@@ -1,4 +1,4 @@
-## Src_CoreWCF_NET60
+## WCF/Src_CoreWCF_NET60
 
 Core WCF development procedure to implement in .NET6.0.
 
@@ -12,7 +12,7 @@ By executing the install command of CoreWCF.Templates at the command prompt, you
 
 ---
 
-## Src_CoreWCF_NetFramework48
+## WCF/Src_CoreWCF_NetFramework48
 
 Core WCF development procedure to implement in .NET6.0.
 
@@ -24,7 +24,7 @@ CoreWCF can also be implemented on .NET Framework 4.8.
 
 ---
 
-## Src_CoreWCF_NET60_HttpHeader
+## WCF/Src_CoreWCF_NET60_HttpHeader
 
 Get HttpRequest Header information of Core WCF.
 
@@ -35,7 +35,7 @@ I created a sample to get HttpRequest Header information during WCF communicatio
 
 ---
 
-## Src_CoreWCF_NET60_Dapper_SQLServer_Transaction
+## WCF/Src_CoreWCF_NET60_Dapper_SQLServer_Transaction
 
 Simple and fast DB transaction processing (on SQLServer) implemented in Core WCF.
 
@@ -54,10 +54,13 @@ Even now, there are people who don't understand multithreading in C# and say "I'
 
 ---
 
-## Src_WCF_Upgrade_CoreWCF
+## WCF/Src_CoreWCF_NET60_Dapper_SQLServer_Transaction_StoredProcedure/
 
-[YouTube]()
-[Source code explanation page]()
+Simple and fast DB transaction processing (on SQLServer) implemented with Core WCF and stored procedures.
+
+From Core WCF of .Net 6.0, using Dapper + Microsoft.Data.SqlClient NuGet package, I created a sample that performs DB transaction processing when using SQLServer stored procedures.
+
+[YouTube](https://youtu.be/WJaXsDN6Y9Y)
+[Source code explanation page](https://blog.unikktle.com/core-wcf%e3%81%a8%e3%82%b9%e3%83%88%e3%82%a2%e3%83%89%e3%83%97%e3%83%ad%e3%82%b7%e3%83%bc%e3%82%b8%e3%83%a3%e3%81%a7%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b%e3%82%b7%e3%83%b3%e3%83%97%e3%83%ab%e3%81%a7/)
 
 ---
-
