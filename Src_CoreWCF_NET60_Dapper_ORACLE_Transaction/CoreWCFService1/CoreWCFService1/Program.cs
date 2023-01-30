@@ -1,4 +1,9 @@
-﻿var builder = WebApplication.CreateBuilder();
+﻿using CoreWCFService1.Shared;
+
+var builder = WebApplication.CreateBuilder();
+
+var configuration = builder.Configuration;
+SharedData.ConnectionString = configuration.GetSection("ConnectionStrings")["OracleDB"];
 
 builder.Services.AddServiceModelServices();
 builder.Services.AddServiceModelMetadata();
