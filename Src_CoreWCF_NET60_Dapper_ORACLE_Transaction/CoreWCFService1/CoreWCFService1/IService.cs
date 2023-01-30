@@ -18,7 +18,8 @@ namespace CoreWCFService1
     {
         public string GetData(int value)
         {
-            return string.Format("You entered: {0}", value);
+            var msg = string.Format("You entered: {0}", value);
+            return msg;
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)

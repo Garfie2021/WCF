@@ -6,5 +6,12 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            var client = new ServiceReference1.ServiceClient();
+            var result = await client.GetDataAsync(12345);
+            MessageBox.Show(result);
+        }
     }
 }
