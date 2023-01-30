@@ -14,6 +14,73 @@ namespace ServiceReference1
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TABLE1", Namespace="http://schemas.datacontract.org/2004/07/CoreWCFService1.Model")]
+    public partial class TABLE1 : object
+    {
+        
+        private string CODEField;
+        
+        private long IDField;
+        
+        private System.Nullable<System.DateTime> VALUE_DATEField;
+        
+        private string VALUE_STRINGField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CODE
+        {
+            get
+            {
+                return this.CODEField;
+            }
+            set
+            {
+                this.CODEField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long ID
+        {
+            get
+            {
+                return this.IDField;
+            }
+            set
+            {
+                this.IDField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> VALUE_DATE
+        {
+            get
+            {
+                return this.VALUE_DATEField;
+            }
+            set
+            {
+                this.VALUE_DATEField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VALUE_STRING
+        {
+            get
+            {
+                return this.VALUE_STRINGField;
+            }
+            set
+            {
+                this.VALUE_STRINGField = value;
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Tools.ServiceModel.Svcutil", "2.1.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/CoreWCFService1")]
     public partial class CompositeType : object
     {
@@ -56,6 +123,9 @@ namespace ServiceReference1
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetData", ReplyAction="http://tempuri.org/IService/GetDataResponse")]
         System.Threading.Tasks.Task<string> GetDataAsync(int value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/InsertTABLE1", ReplyAction="http://tempuri.org/IService/InsertTABLE1Response")]
+        System.Threading.Tasks.Task InsertTABLE1Async(ServiceReference1.TABLE1 TABLE1);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService/GetDataUsingDataContractResponse")]
         System.Threading.Tasks.Task<ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ServiceReference1.CompositeType composite);
@@ -114,6 +184,11 @@ namespace ServiceReference1
         public System.Threading.Tasks.Task<string> GetDataAsync(int value)
         {
             return base.Channel.GetDataAsync(value);
+        }
+        
+        public System.Threading.Tasks.Task InsertTABLE1Async(ServiceReference1.TABLE1 TABLE1)
+        {
+            return base.Channel.InsertTABLE1Async(TABLE1);
         }
         
         public System.Threading.Tasks.Task<ServiceReference1.CompositeType> GetDataUsingDataContractAsync(ServiceReference1.CompositeType composite)
