@@ -12,28 +12,36 @@ By executing the install command of CoreWCF.Templates at the command prompt, you
 
 ---
 
-## WCF/Src_CoreWCF_NetFramework48
+## WCF/Src_CoreWCF_NET60_Dapper_ORACLE_Transaction/
 
-Core WCF development procedure to implement in .NET6.0.
+Simple and high-speed DB transaction processing (on ORACLE) implemented with Core WCF
 
-There seems to be little difference between WCF and Core WCF.
-CoreWCF can also be implemented on .NET Framework 4.8.
+From Core WCF of .Net 6.0, using Dapper + Oracle.EntityFrameworkCore NuGet package, I created a sample that performs DB transaction processing to SQLServer database.
+The mainstream of OR mapping is becoming Dapper.
 
-[YouTube](https://youtu.be/qVPfhVwRq0g)
-[Source code explanation page](https://blog.unikktle.com/net6-0%e3%81%a7%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b-core-wcf-%e9%96%8b%e7%99%ba%e6%89%8b%e9%a0%86/)
+If business logic and database processing are implemented using Repository and Interface, the source code becomes complicated and maintainability decreases.
+Implementing with a static class simplifies the source code and improves maintainability.
+Unit tests are easy to implement for source code implemented with static classes.
+
+There are too many projects that use repositories and interfaces to implement a large amount of useless processing, exploding man-hours and never ending development. Static should be used.
+Even now, there are people who don't understand multithreading in C# and say "I'm worried about using static", and if that person's opinion is adopted and "static is prohibited", the development effort will explode.
+
+[YouTube](https://youtu.be/G9xyDdvIdJI)
+[Source code explanation page](https://blog.unikktle.com/core-wcf%e3%81%a7%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b%e3%82%b7%e3%83%b3%e3%83%97%e3%83%ab%e3%81%a7%e9%ab%98%e9%80%9f%e3%81%aadb%e3%83%88%e3%83%a9%e3%83%b3%e3%82%b6%e3%82%af%e3%82%b7%e3%83%a7-2/)
+
+---
+
+## WCF/Src_CoreWCF_NET60_Dapper_ORACLE_Transaction_StoredProcedure/
+
+Simple and high-speed DB transaction processing (on ORACLE) implemented with Core WCF and stored procedures
+
+From Core WCF of .Net 6.0, using Dapper + Oracle.EntityFrameworkCore NuGet package, I created a sample that performs DB transaction processing when using ORACLE database stored procedure (PL/SQL).
+
+[YouTube](https://youtu.be/mgwDyySJGtU)
+[Source code explanation page](https://blog.unikktle.com/core-wcf%e3%81%a8%e3%82%b9%e3%83%88%e3%82%a2%e3%83%89%e3%83%97%e3%83%ad%e3%82%b7%e3%83%bc%e3%82%b8%e3%83%a3%e3%81%a7%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b%e3%82%b7%e3%83%b3%e3%83%97%e3%83%ab%e3%81%a7-2/)
 
 ---
 
-## WCF/Src_CoreWCF_NET60_HttpHeader
-
-Get HttpRequest Header information of Core WCF.
-
-I created a sample to get HttpRequest Header information during WCF communication on the .NET 6.0 CoreWCF server side.
-
-[YouTube](https://youtu.be/x4A7NWbp5Ug)
-[Source code explanation page](https://blog.unikktle.com/core-wcf-%e3%81%ae-httprequest-header%e6%83%85%e5%a0%b1%e3%82%92%e5%8f%96%e5%be%97/)
-
----
 
 ## WCF/Src_CoreWCF_NET60_Dapper_SQLServer_Transaction
 
@@ -65,32 +73,26 @@ From Core WCF of .Net 6.0, using Dapper + Microsoft.Data.SqlClient NuGet package
 
 ---
 
-## WCF/Src_CoreWCF_NET60_Dapper_ORACLE_Transaction/
+## WCF/Src_CoreWCF_NET60_HttpHeader
 
-Simple and high-speed DB transaction processing (on ORACLE) implemented with Core WCF
+Get HttpRequest Header information of Core WCF.
 
-From Core WCF of .Net 6.0, using Dapper + Oracle.EntityFrameworkCore NuGet package, I created a sample that performs DB transaction processing to SQLServer database.
-The mainstream of OR mapping is becoming Dapper.
+I created a sample to get HttpRequest Header information during WCF communication on the .NET 6.0 CoreWCF server side.
 
-If business logic and database processing are implemented using Repository and Interface, the source code becomes complicated and maintainability decreases.
-Implementing with a static class simplifies the source code and improves maintainability.
-Unit tests are easy to implement for source code implemented with static classes.
-
-There are too many projects that use repositories and interfaces to implement a large amount of useless processing, exploding man-hours and never ending development. Static should be used.
-Even now, there are people who don't understand multithreading in C# and say "I'm worried about using static", and if that person's opinion is adopted and "static is prohibited", the development effort will explode.
-
-[YouTube](https://youtu.be/G9xyDdvIdJI)
-[Source code explanation page](https://blog.unikktle.com/core-wcf%e3%81%a7%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b%e3%82%b7%e3%83%b3%e3%83%97%e3%83%ab%e3%81%a7%e9%ab%98%e9%80%9f%e3%81%aadb%e3%83%88%e3%83%a9%e3%83%b3%e3%82%b6%e3%82%af%e3%82%b7%e3%83%a7-2/)
+[YouTube](https://youtu.be/x4A7NWbp5Ug)
+[Source code explanation page](https://blog.unikktle.com/core-wcf-%e3%81%ae-httprequest-header%e6%83%85%e5%a0%b1%e3%82%92%e5%8f%96%e5%be%97/)
 
 ---
 
-## WCF/Src_CoreWCF_NET60_Dapper_ORACLE_Transaction_StoredProcedure/
+## WCF/Src_CoreWCF_NetFramework48
 
-Simple and high-speed DB transaction processing (on ORACLE) implemented with Core WCF and stored procedures
+Core WCF development procedure to implement in .NET6.0.
 
-From Core WCF of .Net 6.0, using Dapper + Oracle.EntityFrameworkCore NuGet package, I created a sample that performs DB transaction processing when using ORACLE database stored procedure (PL/SQL).
+There seems to be little difference between WCF and Core WCF.
+CoreWCF can also be implemented on .NET Framework 4.8.
 
-[YouTube](https://youtu.be/mgwDyySJGtU)
-[Source code explanation page](https://blog.unikktle.com/core-wcf%e3%81%a8%e3%82%b9%e3%83%88%e3%82%a2%e3%83%89%e3%83%97%e3%83%ad%e3%82%b7%e3%83%bc%e3%82%b8%e3%83%a3%e3%81%a7%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b%e3%82%b7%e3%83%b3%e3%83%97%e3%83%ab%e3%81%a7-2/)
+[YouTube](https://youtu.be/qVPfhVwRq0g)
+[Source code explanation page](https://blog.unikktle.com/net6-0%e3%81%a7%e5%ae%9f%e8%a3%85%e3%81%99%e3%82%8b-core-wcf-%e9%96%8b%e7%99%ba%e6%89%8b%e9%a0%86/)
 
 ---
+
